@@ -1,0 +1,10 @@
+.imagesize{
+    max-height: 400px;
+    max-width: 400px;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.imagesize:hover{
+    opacity: 0.3;
+}
