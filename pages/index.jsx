@@ -1,70 +1,14 @@
-import React from "react";
-import Cards from "./cards";
+import CardDeck from "@/components/CardDeck/carddeck";
+import ShufflePage from "@/components/Shuffle/shuffle";
+import React, { useState } from "react";
 
-const HomePage = () => {
-    const cards = [
-        {
-          title: "Card 1",
-          image: "/img/card1.jpg",
-          description: "This is the first card.",
-        },
-        {
-          title: "Card 2",
-          image: "/img/card2.jpg",
-          description: "This is the second card.",
-        },
-        {
-            title: "Card 2",
-            image: "/img/card2.jpg",
-            description: "This is the second card.",
-          },
-          {
-            title: "Card 2",
-            image: "/img/card2.jpg",
-            description: "This is the second card.",
-          },
-          {
-            title: "Card 2",
-            image: "/img/card2.jpg",
-            description: "This is the second card.",
-          },
-          {
-            title: "Card 2",
-            image: "/img/card2.jpg",
-            description: "This is the second card.",
-          },
-          {
-            title: "Card 2",
-            image: "/img/card2.jpg",
-            description: "This is the second card.",
-          },
-          {
-            title: "Card 2",
-            image: "/img/card2.jpg",
-            description: "This is the second card.",
-          },
-          {
-            title: "Card 2",
-            image: "/img/card2.jpg",
-            description: "This is the second card.",
-          },
-          {
-            title: "Card 2",
-            image: "/img/card2.jpg",
-            description: "This is the second card.",
-          },
-          {
-            title: "Card 2",
-            image: "/img/card2.jpg",
-            description: "This is the second card.",
-          },
-          {
-            title: "Card 2",
-            image: "/img/card2.jpg",
-            description: "This is the second card.",
-          }
-      ];
-  return <Cards cards={cards} />;
+const HomePage = () => {    
+  return (
+    <div>
+        <ShufflePage />
+        {/* <CardDeck cards={initialCards}/> */}
+    </div>
+  );
 };
 
 export default HomePage;

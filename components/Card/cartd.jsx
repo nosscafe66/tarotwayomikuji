@@ -1,12 +1,22 @@
 import React from "react";
 import classes from "../Card/card.module.css";
 
-const Card = ({ title, image, description }) => {
+const Card = ({ title, backimage, frontimage, description }) => {
   return (
     <div>
-      <img className={classes.imagesize} src={image} alt={title} />
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <div className={classes.card}>
+        <div className={classes.back}>
+          <img className={classes.imagesize} src={backimage} alt={title} />
+        </div>
+        <div className={classes.front}>
+          <img className={classes.imagesize} src={frontimage} alt={title} />
+        </div>
+        <div>
+          <h2>{title}</h2>
+          <p>{description}</p>
+        </div>
+      </div>
+
     </div>
   );
 };
