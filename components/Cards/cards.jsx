@@ -5,6 +5,7 @@ import classes from "../Cards/cards.module.css"
 const CardDeck = ({ cards }) => {
   const [shuffledCards, setShuffledCards] = useState(cards);
   const [shufflednum, setShuffledNum] = useState(1);
+  const [shufflerotate,setShufflerotate] = useState(0);
 
   const shuffleCards = useCallback((e) => {
     const newCards = [...shuffledCards];
@@ -14,18 +15,23 @@ const CardDeck = ({ cards }) => {
     }
     setShuffledCards(newCards);
     if (shufflednum < 1000) {
-      console.log(shufflednum)
-      setShuffledNum(prevcount => prevcount + 100)
+      setShuffledNum(prevcount => prevcount + 200)
+      setShufflerotate(prevrotate => prevrotate + 30)
     }
     else if (shufflednum > 11) {
-      console.log(shufflednum)
-      setShuffledNum(1)
+      setShuffledNum(Math.random()* - 1)
+      setShufflerotate(0)
     }
   }, [shufflednum]);
 
   const cardWidth = 400;
   const cardHeight = 500;
   const cardSpacing = 1;
+
+  const generateRotation = () => {
+    const randomRotation = Math.floor(Math.random() * shufflerotate) - 15;
+    return `rotate(${randomRotation}deg)`
+  }
 
   return (
     <div>
@@ -36,12 +42,11 @@ const CardDeck = ({ cards }) => {
             key={index}
             style={{
               zIndex: shuffledCards.length - index,
-              transform: `translate(${Math.floor(Math.random() * shufflednum) - 1}px, ${Math.floor(
+              transform: `translate(${Math.floor(Math.random() * shufflednum) + 10}px, ${Math.floor(
                 Math.random() * shufflednum
-              ) - 10}px)`,
+              ) + 150}px) ${generateRotation()}`,
             }}
           >
-            {/* <img src={card.backimage} alt={card.title} /> */}
             <div className="card-content">
               <Card
                 key={card.title}
@@ -49,6 +54,9 @@ const CardDeck = ({ cards }) => {
                 backimage={card.backimage}
                 frontimage={card.frontimage}
                 description={card.description}
+                style={{
+                  transform: `rotate(${Math.floor(Math.random() * 30) - 15}deg)`
+                }}
               />
             </div>
           </div>
@@ -65,13 +73,13 @@ const CardDeck = ({ cards }) => {
           position: absolute;
           top: ${index => index * cardSpacing}px;
           left: ${index => index * cardSpacing}px;
-          // background-color: white;
+          background-color: white;
           box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 110.2);
           // border-radius: 0.25rem;
           overflow: hidden;
           width: ${cardWidth}px;
           height: ${cardHeight}px;
-          transition: transform 1.9s ease-out;
+          transition: transform 1.5s ease-out;
           border-radius: 60px;
         }
 
