@@ -12,8 +12,8 @@ const Card = ({ title, backimage, frontimage, description }) => {
           <img className={classes.imagesize} src={frontimage} alt={title} />
         </div>
         <div>
-          <h2>{title}</h2>
-          <p>{description}</p>
+          <h2 className={classes.title}>{title}</h2>
+          <p className={classes.description}>{description}</p>
         </div>
       </div>
 

@@ -24,3 +24,10 @@
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
+
+.button{
+    height: 30px;
+    width: 100px;
+    border-radius: 6px;
+    background-color: red;
+}

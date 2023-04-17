@@ -1,5 +1,5 @@
 .imagesize {
-    max-height: 400px;
+    max-height: 500px;
     max-width: 400px;
     border-radius: 60px;
     margin: auto;
@@ -64,4 +64,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.description{
+    color: black;
+}
+
+.title{
+    color: black;
 }

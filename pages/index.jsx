@@ -6,7 +6,6 @@ const HomePage = () => {
   return (
     <div>
         <ShufflePage />
-        {/* <CardDeck cards={initialCards}/> */}
     </div>
   );
 };
