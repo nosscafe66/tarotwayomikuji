@@ -4,7 +4,7 @@ import classes from "../Cards/cards.module.css"
 
 const CardDeck = ({ cards }) => {
   const [shuffledCards, setShuffledCards] = useState(cards);
-  const [shufflednum,setShuffledNum] = useState(1);
+  const [shufflednum, setShuffledNum] = useState(1);
 
   const shuffleCards = useCallback((e) => {
     const newCards = [...shuffledCards];
@@ -13,15 +13,15 @@ const CardDeck = ({ cards }) => {
       [newCards[i], newCards[j]] = [newCards[j], newCards[i]];
     }
     setShuffledCards(newCards);
-    if(shufflednum < 1000){
+    if (shufflednum < 1000) {
       console.log(shufflednum)
       setShuffledNum(prevcount => prevcount + 100)
     }
-    else if(shufflednum > 11){
+    else if (shufflednum > 11) {
       console.log(shufflednum)
       setShuffledNum(1)
     }
-  },[shufflednum]);
+  }, [shufflednum]);
 
   const cardWidth = 400;
   const cardHeight = 500;
@@ -29,31 +29,31 @@ const CardDeck = ({ cards }) => {
 
   return (
     <div>
-    <div className="card-deck">
-      {shuffledCards.map((card, index) => (
-        <div
-          className="card"
-          key={index}
-          style={{
-            zIndex: shuffledCards.length - index,
-            transform: `translate(${Math.floor(Math.random() * shufflednum) - 1}px, ${Math.floor(
-              Math.random() * shufflednum
-            ) - 10}px)`,
-          }}
-        >
-          {/* <img src={card.backimage} alt={card.title} /> */}
-          <div className="card-content">
-            <Card
-              key={card.title}
-              title={card.title}
-              backimage={card.backimage}
-              frontimage={card.frontimage}
-              description={card.description}
-            />
+      <div className="card-deck">
+        {shuffledCards.map((card, index) => (
+          <div
+            className="card"
+            key={index}
+            style={{
+              zIndex: shuffledCards.length - index,
+              transform: `translate(${Math.floor(Math.random() * shufflednum) - 1}px, ${Math.floor(
+                Math.random() * shufflednum
+              ) - 10}px)`,
+            }}
+          >
+            {/* <img src={card.backimage} alt={card.title} /> */}
+            <div className="card-content">
+              <Card
+                key={card.title}
+                title={card.title}
+                backimage={card.backimage}
+                frontimage={card.frontimage}
+                description={card.description}
+              />
+            </div>
           </div>
-        </div>
-      ))}
-      <style jsx>{`
+        ))}
+        <style jsx>{`
         .card-deck {
           margin:auto;
           position: relative;
@@ -103,8 +103,8 @@ const CardDeck = ({ cards }) => {
           line-height: 1.25;
         }
       `}</style>
-    </div><br /><br />
-    <button onClick={shuffleCards}>CardsShuffle</button>
+      </div><br /><br />
+      <button onClick={shuffleCards}>CardsShuffle</button>
     </div>
   );
 };
