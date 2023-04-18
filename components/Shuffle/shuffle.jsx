@@ -4,81 +4,146 @@ import "../Shuffle/shuffle.module.css";
 import classes from "../Shuffle/shuffle.module.css"
 
 const ShufflePage = () => {
-    const [shuffledCards, setShuffledCards] = useState([]);
+    const [shuffledCards, setShuffledCards] = useState([{
+        title: "Knight of Disks",
+        backimage: "/img/backimage.jpg",
+        frontimage: "/img/knightofdisks.jpg",
+        description: "This is Knight of Disks",
+    },
+    {
+        title: "Prince of Swords",
+        backimage: "/img/backimage.jpg",
+        frontimage: "/img/princeofswords.jpg",
+        description: "This is Prince of Swords",
+    },
+    {
+        title: "Seven of Cups",
+        backimage: "/img/backimage.jpg",
+        frontimage: "/img/sevenofcups.jpg",
+        description: "This is Seven of Cups",
+    },
+    {
+        title: "The Aeon",
+        backimage: "/img/backimage.jpg",
+        frontimage: "/img/theaeon.jpg",
+        description: "This is The Aeon",
+    },
+    {
+        title: "The Emperor",
+        backimage: "/img/backimage.jpg",
+        frontimage: "/img/theemperor.jpg",
+        description: "This is The Emperor",
+    },
+    {
+        title: "The Empress",
+        backimage: "/img/backimage.jpg",
+        frontimage: "/img/theempress.jpg",
+        description: "This is The Empress",
+    },
+    {
+        title: "The Herophant",
+        backimage: "/img/backimage.jpg",
+        frontimage: "/img/theherophant.jpg",
+        description: "This is The Herophant",
+    },
+    {
+        title: "The Magus",
+        backimage: "/img/backimage.jpg",
+        frontimage: "/img/themagus.jpg",
+        description: "This is The Magus",
+    },
+    {
+        title: "The of Wands",
+        backimage: "/img/backimage.jpg",
+        frontimage: "/img/theofwands.jpg",
+        description: "This is The of Wands",
+    },
+    {
+        title: "two of Disk",
+        backimage: "/img/backimage.jpg",
+        frontimage: "/img/twoofdisk.jpg",
+        description: "This is The two of Disk",
+    },
+    {
+        title: "Ace of Disks",
+        backimage: "/img/backimage.jpg",
+        frontimage: "/img/aceofdisks.jpg",
+        description: "This is The Ace of Disks",
+    },]);
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-  const deck = [
-    {
-      title: "Knight of Disks",
-      backimage: "/img/backimage.jpg",
-      frontimage: "/img/knightofdisks.jpg",
-      description: "This is Knight of Disks",
-    },
-    {
-      title: "Prince of Swords",
-      backimage: "/img/backimage.jpg",
-      frontimage: "/img/princeofswords.jpg",
-      description: "This is Prince of Swords",
-    },
-    {
-      title: "Seven of Cups",
-      backimage: "/img/backimage.jpg",
-      frontimage: "/img/sevenofcups.jpg",
-      description: "This is Seven of Cups",
-    },
-    {
-      title: "The Aeon",
-      backimage: "/img/backimage.jpg",
-      frontimage: "/img/theaeon.jpg",
-      description: "This is The Aeon",
-    },
-    {
-      title: "The Emperor",
-      backimage: "/img/backimage.jpg",
-      frontimage: "/img/theemperor.jpg",
-      description: "This is The Emperor",
-    },
-    {
-      title: "The Empress",
-      backimage: "/img/backimage.jpg",
-      frontimage: "/img/theempress.jpg",
-      description: "This is The Empress",
-    },
-    {
-      title: "The Herophant",
-      backimage: "/img/backimage.jpg",
-      frontimage: "/img/theherophant.jpg",
-      description: "This is The Herophant",
-    },
-    {
-      title: "The Magus",
-      backimage: "/img/backimage.jpg",
-      frontimage: "/img/themagus.jpg",
-      description: "This is The Magus",
-    },
-    {
-      title: "The of Wands",
-      backimage: "/img/backimage.jpg",
-      frontimage: "/img/theofwands.jpg",
-      description: "This is The of Wands",
-    },
-    {
-      title: "two of Disk",
-      backimage: "/img/backimage.jpg",
-      frontimage: "/img/twoofdisk.jpg",
-      description: "This is The two of Disk",
-    },
-    {
-      title: "Ace of Disks",
-      backimage: "/img/backimage.jpg",
-      frontimage: "/img/aceofdisks.jpg",
-      description: "This is The Ace of Disks",
-    },
-  ];
+        const deck = [
+            {
+                title: "Knight of Disks",
+                backimage: "/img/backimage.jpg",
+                frontimage: "/img/knightofdisks.jpg",
+                description: "This is Knight of Disks",
+            },
+            {
+                title: "Prince of Swords",
+                backimage: "/img/backimage.jpg",
+                frontimage: "/img/princeofswords.jpg",
+                description: "This is Prince of Swords",
+            },
+            {
+                title: "Seven of Cups",
+                backimage: "/img/backimage.jpg",
+                frontimage: "/img/sevenofcups.jpg",
+                description: "This is Seven of Cups",
+            },
+            {
+                title: "The Aeon",
+                backimage: "/img/backimage.jpg",
+                frontimage: "/img/theaeon.jpg",
+                description: "This is The Aeon",
+            },
+            {
+                title: "The Emperor",
+                backimage: "/img/backimage.jpg",
+                frontimage: "/img/theemperor.jpg",
+                description: "This is The Emperor",
+            },
+            {
+                title: "The Empress",
+                backimage: "/img/backimage.jpg",
+                frontimage: "/img/theempress.jpg",
+                description: "This is The Empress",
+            },
+            {
+                title: "The Herophant",
+                backimage: "/img/backimage.jpg",
+                frontimage: "/img/theherophant.jpg",
+                description: "This is The Herophant",
+            },
+            {
+                title: "The Magus",
+                backimage: "/img/backimage.jpg",
+                frontimage: "/img/themagus.jpg",
+                description: "This is The Magus",
+            },
+            {
+                title: "The of Wands",
+                backimage: "/img/backimage.jpg",
+                frontimage: "/img/theofwands.jpg",
+                description: "This is The of Wands",
+            },
+            {
+                title: "two of Disk",
+                backimage: "/img/backimage.jpg",
+                frontimage: "/img/twoofdisk.jpg",
+                description: "This is The two of Disk",
+            },
+            {
+                title: "Ace of Disks",
+                backimage: "/img/backimage.jpg",
+                frontimage: "/img/aceofdisks.jpg",
+                description: "This is The Ace of Disks",
+            },
+        ];
 
-  setCards(deck);
-}, []);
+        setCards(deck);
+    }, []);
 
     useEffect(() => {
         setShuffledCards(shuffleCards(cards));
@@ -101,7 +166,7 @@ const ShufflePage = () => {
     useEffect(() => {
         setShuffledCards(shuffleCards(cards));
     }, []);
-    
+
 
     return (
         <div className="home-page">

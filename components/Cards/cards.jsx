@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Card from "@/components/Card/cartd";
-import classes from "../Cards/cards.module.css"
 
 const CardDeck = ({ cards }) => {
   const [shuffledCards, setShuffledCards] = useState(cards);
   const [shufflednum, setShuffledNum] = useState(1);
-  const [shufflerotate,setShufflerotate] = useState(0);
+  const [shufflerotate, setShufflerotate] = useState(0);
 
   const shuffleCards = useCallback((e) => {
     const newCards = [...shuffledCards];
@@ -19,8 +18,8 @@ const CardDeck = ({ cards }) => {
       setShufflerotate(prevrotate => prevrotate + 30)
     }
     else if (shufflednum > 11) {
-      setShuffledNum(Math.random()* - 1)
-      setShufflerotate(0)
+      setShuffledNum(-1)
+      setShufflerotate(Math.random() * - 1)
     }
   }, [shufflednum]);
 
@@ -29,8 +28,9 @@ const CardDeck = ({ cards }) => {
   const cardSpacing = 1;
 
   const generateRotation = () => {
-    const randomRotation = Math.floor(Math.random() * shufflerotate) - 15;
-    return `rotate(${randomRotation}deg)`
+    const randomRotation = Math.floor(Math.random() * shufflerotate) - 0;
+    const isUpsideDown = Math.random() < 0.5;
+    return `rotate(${isUpsideDown ? 180 - randomRotation : randomRotation}deg)`;
   }
 
   return (
@@ -112,7 +112,7 @@ const CardDeck = ({ cards }) => {
         }
       `}</style>
       </div><br /><br />
-      <button onClick={shuffleCards}>CardsShuffle</button>
+      <button className="button" onClick={shuffleCards}>CardsShuffle</button>
     </div>
   );
 };
