@@ -23,8 +23,8 @@ const CardDeck = ({ cards }) => {
     }
   }, [shufflednum]);
 
-  const cardWidth = 400;
-  const cardHeight = 500;
+  const cardWidth = 300;
+  const cardHeight = 400;
   const cardSpacing = 1;
 
   const generateRotation = () => {
@@ -109,6 +109,12 @@ const CardDeck = ({ cards }) => {
         .card-content p {
           font-size: 0.75rem;
           line-height: 1.25;
+        }
+        .button {
+          position: fixed;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
         }
       `}</style>
       </div><br /><br />
