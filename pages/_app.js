@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
       domain="dev-38se6zvu8y7kxej4.jp.auth0.com"
       clientId="MyLt1jOYrS3QiiZNpyF1kNXpNwuRlH9I"
       authorizationParams={{
-        redirect_uri: "https://vercel.com/nosscafe66/tarotwayomikuji/main"
+        redirect_uri: "http://localhost:3000/main"
       }}
     ><Background />
       <Component {...pageProps} />
