@@ -9,8 +9,7 @@
     opacity: 0.3;
 }
 
-/* カード本体 /
-    / 任意の横幅を指定 */
+/* カード本体 任意の横幅を指定 */
 .card {
     width: 30%;
     position: relative;

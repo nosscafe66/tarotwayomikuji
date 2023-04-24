@@ -39,6 +39,25 @@ const Background = () => {
           zIndex: -1,
         }}
       />
+      <div
+        style={{
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '5em',
+          fontWeight: 'bold',
+          color: 'rgba(255, 255, 25, 0.7)', // 半透明の白色に変更
+          zIndex: 0,
+          mixBlendMode: 'overlay' // ブレンドモードをオーバーレイに変更
+        }}
+      >
+        <span>Kashiopia Project</span>
+      </div>
     </div>
   );
 };
