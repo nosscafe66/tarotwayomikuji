@@ -6,6 +6,7 @@ import "firebase/firestore";
 import { useAuth0 } from "@auth0/auth0-react";
 import { getFirestore } from "firebase/firestore";
 import Link from "next/link";
+import classes from "../TarotReadingResult/tarotreadingresult.module.css"
 
 const firebaseConfig = {
     apiKey: "AIzaSyDFO_q77_N8pzCFkEb3Elxew_W-3e67RlI",
@@ -53,16 +54,16 @@ const RecordResult = () => {
 
     return (
         <>
-            <button >
-                <Link href="/" >
+            <button className={classes.button}>
+                <Link href="/main" >
                     戻る
                 </Link>
             </button>
-            <h1>タロットの鑑定結果を記録する</h1>
+            <h1 className={classes.title}>タロットの鑑定結果を記録する</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="title">タイトル:</label>
-                    <input
+                    <label className={classes.title} htmlFor="title">タイトル:</label>
+                    <input className={classes.titlearea}
                         type="text"
                         id="title"
                         value={title}
@@ -70,14 +71,14 @@ const RecordResult = () => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="description">説明:</label>
-                    <textarea
+                    <label className={classes.title} htmlFor="description">説明:</label>
+                    <textarea className={classes.description}
                         id="description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                     />
                 </div>
-                <button onClick={handleSubmit} type="submit">保存する</button>
+                <button className={classes.button} onClick={handleSubmit} type="submit">保存する</button>
             </form>
         </>
     );

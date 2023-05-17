@@ -1,9 +1,14 @@
 import RecordResult from "@/components/TarotReadingResult/tarotreadingresult";
+import Head from 'next/head'
 
-export default function TarotReadingResultViewPage(){
-    return(
+export default function TarotReadingResultViewPage() {
+    return (
         <div>
-            <RecordResult/>
+            <Head>
+                <title>TarotResult Page</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+            </Head>
+            <RecordResult />
         </div>
     )
 }

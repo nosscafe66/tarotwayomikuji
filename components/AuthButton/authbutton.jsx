@@ -17,8 +17,8 @@ export function AuthButton({isAuthenticated}) {
         <div>
             {isAuthenticated && (
                 <div>
-                    {<p>{user?.name}</p>}
-                    <button onClick={() => logout()}>ログアウト</button>
+                    {<p className={styles.username}>{user?.name}</p>}
+                    <button className={styles.button} onClick={() => logout()}>ログアウト</button>
                 </div>
             )}
             {!isAuthenticated && (

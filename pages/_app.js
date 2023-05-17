@@ -8,10 +8,10 @@ export default function App({ Component, pageProps }) {
   const redirectUri = process.env.AUTH0_REDIRECT_URI
   return (
     <Auth0Provider
-      domain="dev-38se6zvu8y7kxej4.jp.auth0.com"
+      domain="dev-38se6zvu8y7kxej4.jp.auth0.com" //dev-38se6zvu8y7kxej4.jp.auth0.com
       clientId="MyLt1jOYrS3QiiZNpyF1kNXpNwuRlH9I"
       authorizationParams={{
-        redirect_uri: "https://tarotwayomikuji.vercel.app/main"
+        redirect_uri: "http://localhost:3000/main" //https://tarotwayomikuji.vercel.app/main
       }}
     ><Background />
       <Component {...pageProps} />
